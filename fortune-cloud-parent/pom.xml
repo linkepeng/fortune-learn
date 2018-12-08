@@ -8,10 +8,18 @@
 	<packaging>pom</packaging>
 	<name>fortune-cloud-parent</name>
 	<description>学习</description>
-	
+
 	<modules>
 		<module>fortune-dubbo-learn</module>
 		<module>fortune-iot-learn</module>
 		<module>fortune-tool-learn</module>
+		<module>fortune-dubbo-consumer</module>
 	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+	
 </project>
