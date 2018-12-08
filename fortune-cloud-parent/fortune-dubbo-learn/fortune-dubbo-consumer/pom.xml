@@ -4,15 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.fortune.cloud</groupId>
-		<artifactId>fortune-cloud-parent</artifactId>
+		<artifactId>fortune-dubbo-learn</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>fortune-dubbo-learn</artifactId>
-	<packaging>pom</packaging>
-	<name>fortune-dubbo-learn</name>
-	<description>dubbo学习</description>
-	<modules>
-		<module>fortune-dubbo-provide</module>
-		<module>fortune-dubbo-consumer</module>
-	</modules>
+	<artifactId>fortune-dubbo-consumer</artifactId>
 </project>
