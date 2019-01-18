@@ -24,17 +24,17 @@ public class MqttClientPaho {
 		MqttClient mqttClient = new MqttClient(broker, clinetId, persistence);
 		mqttClient.setCallback(new MqttCallback() {
 			
-			@Override
+			/*@Override*/
 			public void messageArrived(String topic, MqttMessage message) throws Exception {
 				// TODO Auto-generated method stub
 			}
 			
-			@Override
+		/*	@Override*/
 			public void deliveryComplete(IMqttDeliveryToken token) {
 				// TODO Auto-generated method stub
 			}
 			
-			@Override
+			/*@Override*/
 			public void connectionLost(Throwable cause) {
 				// TODO Auto-generated method stub
 			}

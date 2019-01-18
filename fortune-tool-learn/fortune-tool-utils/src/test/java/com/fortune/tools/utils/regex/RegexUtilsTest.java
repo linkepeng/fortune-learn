@@ -1,7 +1,6 @@
 package com.fortune.tools.utils.regex;
 
-import org.junit.Assert;
-import org.junit.jupiter.api.Test;
+
 
 /**
  * 正则测试类
@@ -10,7 +9,7 @@ import org.junit.jupiter.api.Test;
  */
 class RegexUtilsTest {
 	
-	@Test
+	/*@Test
 	void testIsEmail() {		
 		Assert.assertTrue(RegexUtils.isEmail("xinxin@163.com"));
 		Assert.assertTrue(RegexUtils.isEmail("pinker.lin@163.com.cn"));
@@ -23,5 +22,5 @@ class RegexUtilsTest {
 		Assert.assertTrue(RegexUtils.isWebUrl("https://blog.csdn.net/mayh554024289/article/details/38375457"));
 		Assert.assertFalse(RegexUtils.isWebUrl("httpx://www.baidu.com/hello?he=1&y=2"));
 	}
-
+*/
 }

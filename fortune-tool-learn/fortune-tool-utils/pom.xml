@@ -2,11 +2,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<parent>
+<!--	<parent>
 		<groupId>com.fortune.cloud</groupId>
 		<artifactId>fortune-tool-learn</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-	</parent>
+	</parent>-->
 	<artifactId>fortune-tool-utils</artifactId>
 	<name>fortune-tool-utils</name>
 	<description>fortune-tool-utils</description>
@@ -25,6 +25,12 @@
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-lang3</artifactId>
 			<version>${common.lang3.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
