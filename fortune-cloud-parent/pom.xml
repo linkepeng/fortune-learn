@@ -18,7 +18,8 @@
 		<module>fortune-micrservice-disconvery-eureka</module>
         <module>fortune-micrservice-provider-user</module>
         <module>fortune-micrservice-consumer-movie</module>
-	</modules>
+        <module>fortune-microservice-consumer-movie-ribbon</module>
+    </modules>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
