@@ -4,7 +4,7 @@ import org.apache.dubbo.demo.DemoService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Consumer {
-    /*public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"META-INF/spring/consumer.xml"});
         context.start();
         // Obtaining a remote service proxy
@@ -13,5 +13,5 @@ public class Consumer {
         String hello = demoService.sayHello("world");
         // Display the call result
         System.out.println(hello);
-    }*/
+    }
 }
