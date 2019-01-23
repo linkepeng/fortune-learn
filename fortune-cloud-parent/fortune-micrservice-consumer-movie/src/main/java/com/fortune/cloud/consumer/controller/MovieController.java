@@ -1,22 +1,20 @@
 package com.fortune.cloud.consumer.controller;
 
 import com.fortune.cloud.consumer.entity.User;
+import com.fortune.cloud.consumer.feign.UserFeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 
 
 
 @RestController
 public class MovieController {
-  @Autowired
+  /*@Autowired
   private RestTemplate restTemplate;
-  
-  
+
   @Value("${user.userServicePath}")
   private String userServicePath;
 
@@ -27,7 +25,7 @@ public class MovieController {
     // HAProxy Heartbeat
 	System.err.println(userServicePath);
     return this.restTemplate.getForObject(userServicePath + id, User.class);
-  }
+  }*/
 
 /*  @GetMapping("/test")
   public String test() {
@@ -39,4 +37,17 @@ public class MovieController {
 
     return "1";
   }*/
+
+
+    /**使用Feign调用**/
+    @Autowired
+    private UserFeignClient userFeignClient;
+
+    //通过feign 调用远程微服务数据
+    @GetMapping("/feign/movie/{id}")
+    public User findFeignById(@PathVariable Long id) {
+        User user = userFeignClient.findById(id);
+        return user;
+    }
+
 }
