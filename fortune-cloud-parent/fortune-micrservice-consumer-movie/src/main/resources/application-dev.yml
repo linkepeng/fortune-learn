@@ -1,0 +1,16 @@
+server:
+  port: 7901
+user:
+  userServicePath: http://localhost:8001/simple/
+spring:
+  application:
+    name: microservice-consumer-movie
+#Eureka的到对应的服务器
+eureka:
+  client:
+    service-url:
+      #defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://user:password123@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true #设置为ture 可以使用ip访问
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}} #通过自定义微服务的 ${spring.cloud.client.hostname} 本地及其名称    

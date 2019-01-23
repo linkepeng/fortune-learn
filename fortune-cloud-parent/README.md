@@ -1,0 +1,39 @@
+spring cloud 为开发人员提供了快速构建分布式系统的一些工具，包括配置管理、服务发现、断路器、路由、微代理、事件总线、全局锁、决策竞选、分布式会话等等
+
+Eureka Client：负责将这个服务的信息注册到Eureka Server中
+Eureka Server：注册中心，里面有一个注册表，保存了各个服务所在的机器和端口号
+
+首先，如果你对某个接口定义了@FeignClient注解，Feign就会针对这个接口创建一个动态代理
+接着你要是调用那个接口，本质就是会调用 Feign创建的动态代理，这是核心中的核心
+Feign的动态代理会根据你在接口上的@RequestMapping等注解，来动态构造出你要请求的服务的地址
+最后针对这个地址，发起请求、解析响应
+
+Ribbon 客户端的负载均衡！ 轮训 权重 随机
+
+AvailabilityFilteringRule()：会先过滤由于多次访问故障而处于断路器跳闸状态的服务，还有并发的连接数量超过阈值的服务，然后对剩余的服务列表按照轮询策略进行访问
+
+WeightedResponseTimeRule()：根据平均响应的时间计算所有服务的权重，响应时间越快服务权重越大被选中的概率越高，
+刚启动时如果统计信息不足，则使用RoundRobinRule策略，等统计信息足够会切换到WeightedResponseTimeRule
+RetryRule()：先按照RoundRobinRule的策略获取服务，如果获取失败则在制定时间内进行重试，获取可用的服务。
+BestAviableRule()：会先过滤掉由于多次访问故障而处于断路器跳闸状态的服务，然后选择一个并发量最小的服务
+ZoneAvoidanceRule()：默认规则，符合判断server所在区域的性能和server的可用性选择服务器
+
+Ribbon是和Feign以及Eureka紧密协作，完成工作的，具体如下：
+首先Ribbon会从 Eureka Client里获取到对应的服务注册表，也就知道了所有的服务都部署在了哪些机器上，在监听哪些端口号。
+然后Ribbon就可以使用默认的Round Robin算法，从中选择一台机器
+Feign就会针对这台机器，构造并发起请求。
+
+Eureka：各个服务启动时，Eureka Client都会将服务注册到Eureka Server，并且Eureka Client还可以反过来从Eureka Server拉取注册表，从而知道其他服务在哪里
+Ribbon：服务间发起请求的时候，基于Ribbon做负载均衡，从一个服务的多台机器中选择一台
+Feign：基于Feign的动态代理机制，根据注解和选择的机器，拼接请求URL地址，发起请求
+Hystrix：发起请求是通过Hystrix的线程池来走的，不同的服务走不同的线程池，实现了不同服务调用的隔离，避免了服务雪崩的问题
+Zuul：如果前端、移动端要调用后端系统，统一从Zuul网关进入，由Zuul网关转发请求给对应的服务
+
+spring boot 它的设计目的就是为例简化开发，开启了各种自动装配，你不想写各种配置文件，引入相关的依赖就能迅速搭建起一个web工程。
+它采用的是建立生产就绪的应用程序观点，优先于配置的惯例。
+
+是一个分布式服务框架，致力于提供高性能和透明化的RPC远程服务调用方案，以及SOA服务治理方案
+
+Service-Oriented Architecture
+
+SOA 

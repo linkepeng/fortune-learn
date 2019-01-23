@@ -16,6 +16,8 @@
 
 	<modules>
 		<module>fortune-micrservice-disconvery-eureka</module>
+        <module>fortune-micrservice-provider-user</module>
+        <module>fortune-micrservice-consumer-movie</module>
 	</modules>
 
 	<properties>
@@ -31,6 +33,8 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
 				<version>${spring.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
