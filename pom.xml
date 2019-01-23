@@ -14,11 +14,6 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
     </properties>
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.13.RELEASE</version>
-    </parent>
     <modules>
         <module>fortune-cloud-parent</module>
         <module>fortune-dubbo-learn</module>
