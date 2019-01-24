@@ -20,5 +20,6 @@
         <module>fortune-iot-learn</module>
         <module>fortune-tool-learn</module>
         <module>fortune-workflow-learn</module>
+        <module>fortune-basic-learn</module>
     </modules>
 </project>
