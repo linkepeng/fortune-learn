@@ -19,5 +19,6 @@
         <module>fortune-dubbo-learn</module>
         <module>fortune-iot-learn</module>
         <module>fortune-tool-learn</module>
+        <module>fortune-workflow-learn</module>
     </modules>
 </project>
