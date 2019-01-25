@@ -21,5 +21,6 @@
         <module>fortune-tool-learn</module>
         <module>fortune-workflow-learn</module>
         <module>fortune-basic-learn</module>
+        <module>fortune-design-pattern-learn</module>
     </modules>
 </project>
