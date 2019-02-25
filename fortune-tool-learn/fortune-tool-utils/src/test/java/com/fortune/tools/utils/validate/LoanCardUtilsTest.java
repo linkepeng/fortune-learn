@@ -1,5 +1,7 @@
 package com.fortune.tools.utils.validate;
 
+import org.junit.Test;
+
 /**
  * 贷款卡编码的校验算法
  *
@@ -14,5 +16,24 @@ package com.fortune.tools.utils.validate;
  * @date 2018年12月8日
  */
 public class LoanCardUtilsTest {
-	
+    @Test
+    public void loanCardTest(){
+
+        /**
+         * 3301220000001069
+         * 3301220000005644
+         * 3301220000001101
+         * 3301220000005644
+         * 3301220000001101
+         * 3301220000001649
+         * 3301220000005644
+         */
+        String loanCardStr = "3301220000001069";
+        System.out.println("贷款卡号" + loanCardStr + "验证合格？ " + LoanCardUtils.isLoanCard(loanCardStr));
+        loanCardStr = "3301220000001649";
+        System.out.println("贷款卡号" + loanCardStr + "验证合格？ " + LoanCardUtils.isLoanCard(loanCardStr));
+        loanCardStr = "3301220000005645";
+        System.out.println("贷款卡号" + loanCardStr + "验证合格？ " + LoanCardUtils.isLoanCard(loanCardStr));
+
+    }
 }

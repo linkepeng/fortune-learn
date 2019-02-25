@@ -2,6 +2,8 @@ package com.fortune.tools.utils.validate;
 
 /*import org.apache.commons.lang3.StringUtils;*/
 
+import org.apache.commons.lang3.StringUtils;
+
 /**
  * 贷款卡编码的校验算法
  *
@@ -19,31 +21,31 @@ public class LoanCardUtils {
 	
 	/**
 	 * 权重数组
-	 *//*
+	 */
     private static final int[] WEIGHT = { 1, 3, 5, 7, 11, 2, 13, 1, 1, 17, 19, 97, 23, 29 };
     
-    *//**
+    /**
      * 最大长度 16
-     *//*
+     */
     private static final int LOAN_MAX_LEN = 16;
     
-    *//**
+    /**
      * 判断头三位是否为字母或者大写字母 正则表达式
-     *//*
+     */
     private static final String WORD_PATTERN = "^[0-9A-Z]{3}";
     
-    *//**
+   /**
      * 十三位是否为纯数字
-     *//*
+     */
     private static final String NO_PATTERN = "^\\\\d{13}$";
     
-    *//**
+    /**
      * 验证是否为贷款卡码
      *
      * @param check
      *            需要验证的贷款号码
      * @return
-     *//*
+     */
     public static boolean  isLoanCard(String check) {
         // 判断是否为十六位,并且是否传进来的为空
     	if(StringUtils.isBlank(check)) {
@@ -79,5 +81,5 @@ public class LoanCardUtils {
         }
         int result = sum % 97 + 1;
         return (result <= 9) ? validate.equals("0" + result) : validate.equals("" + result);
-    }*/
+    }
 }
